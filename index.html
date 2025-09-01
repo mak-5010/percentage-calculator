@@ -197,6 +197,18 @@
           return;
         }
 
+        if (originalPrice <= 0) {
+          document.getElementById("result").innerText =
+            "⚠️ Original price must be greater than 0.";
+          return;
+        }
+
+        if (discountPercent < 0 || discountPercent > 100) {
+          document.getElementById("result").innerText =
+            "⚠️ Discount % must be between 0 and 100.";
+          return;
+        }
+
         const discountAmount = (originalPrice * discountPercent) / 100;
         const finalPrice = originalPrice - discountAmount;
 
